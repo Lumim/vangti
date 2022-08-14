@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link,Outlet} from 'react-router-dom'
 function WebLayout() {
   return (
     <>
@@ -7,15 +7,15 @@ function WebLayout() {
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
         </button>
-            <a className="navbar-brand" href="#">Web Nav</a>
+        <Link className="nav-link" to="/"> Vangti</Link> 
 
             <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                    <Link className="nav-link" to="/"> Home</Link>  
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
+                    <Link className="nav-link" to="/loan">Loan</Link>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link disabled" href="#">WEBSITE</a>
@@ -23,11 +23,12 @@ function WebLayout() {
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+               
                 </form>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </div>
         </nav>
-        
+        <Outlet/>
     </>
   )
 }
