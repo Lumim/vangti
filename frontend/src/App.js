@@ -9,24 +9,25 @@ import AdminLayout from './layout/AdminLayout';
 import Users from './admin/modules/Users';
 import Insurance from './web/modules/Insurance';
 import Currency from './web/modules/Currency';
+
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<WebLayout />}>
           <Route  index element={<WebIndex />}/>
-          <Route path="/loan" element={<Loan/>}/>
-          <Route path="/currency" element={<Currency/>}/>
-          <Route path="/insurance" element={<Insurance/>}/>
+          <Route path="loan" element={<Loan/>}/>
+          <Route  path="currency" element={<Currency/>}/>
+          <Route path="insurance" element={<Insurance/>}/>
         </Route>
+
         <Route path="*" element={<NotFound/>}/>
-       
-          
+         
         <Route path="admin"element={<AdminLayout />}>
             <Route index element={<AdminIndex/>} />
             <Route path='/admin/users' element={<Users/>}/>
-        </Route>
-        
+        </Route> 
       </Routes>
    </BrowserRouter>
   );
