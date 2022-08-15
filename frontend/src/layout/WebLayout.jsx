@@ -11,14 +11,15 @@ function WebLayout() {
 
             <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li className="nav-item active">
-                    <Link className="nav-link" to="/"> Home</Link>  
+                 
+                <li className="nav-item">
+                    <Link className="nav-link" to="/loan">Apply Loan</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/loan">Loan</Link>
+                    <a className="nav-link" href="/currency">Currency Converter</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#">WEBSITE</a>
+                    <a className="nav-link" href="/insurance">Get Insurance</a>
                 </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
