@@ -21,6 +21,9 @@ function WebLayout() {
                 <li className="nav-item">
                     <a className="nav-link" href="/insurance">Get Insurance</a>
                 </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/login">Login</a>
+                </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>

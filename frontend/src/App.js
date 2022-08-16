@@ -9,6 +9,8 @@ import AdminLayout from './layout/AdminLayout';
 import Users from './admin/modules/Users';
 import Insurance from './web/modules/Insurance';
 import Currency from './web/modules/Currency';
+import Login from './Login/Login';
+import Registration from './Login/Registration';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path="loan" element={<Loan/>}/>
           <Route  path="currency" element={<Currency/>}/>
           <Route path="insurance" element={<Insurance/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="register" element={<Registration/>} />
         </Route>
 
         <Route path="*" element={<NotFound/>}/>
