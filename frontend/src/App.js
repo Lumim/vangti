@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './assets/css/web.css'
 import {BrowserRouter,Routes,Route,Switch} from 'react-router-dom'
 import WebIndex from './web/WebIndex';
 import AdminIndex from './admin/AdminIndex';

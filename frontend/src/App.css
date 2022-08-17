@@ -38,6 +38,27 @@
 }
 
 body{
-  padding-left: 1em;
-  padding-right:1em;
+  padding-left:0;
+   
+  overflow-X: hidden;
+}
+.banner{
+  position: relative;
+}
+.buttonHome{
+  position: absolute;
+  margin-top: 26em;
+  margin-left: 44em;
+  height: 3em;
+  width: 11em;
+  font-weight: 600;
+  color:red;
+  background-color: yellow;
+  border-radius: 20px;
+  font-family: sans-serif;
+}
+.buttonHome:hover{
+  background-color: aqua;
+  color: #000;
+  transform: scale(1.25);
 }
