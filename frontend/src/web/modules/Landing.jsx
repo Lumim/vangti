@@ -21,7 +21,7 @@ gsap.to(h1Ref.current,3.5,{x:360,duration:2,stagger:1,repeat:-1});
 
   return (
     <div>
-      <div className='card'> <Banner/> <button className=' buttonHome'> click for details</button></div>
+      <div id="hcard" className='card'> <Banner/> <button className=' buttonHome'> click for details</button></div>
        <WantCurrency/>
       <h1>Want to apply for a currency conversion?</h1>
       <h1 > Request for a vangti dealer at you home?</h1>

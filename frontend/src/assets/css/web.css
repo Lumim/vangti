@@ -1,0 +1,14 @@
+#nav_item{
+    color:#fff;
+    font-size: 32px;
+    font-weight: 600;
+}
+#hcard{
+    --bs-card-border-width: 0px !important; 
+}
+body{
+    background-color: #34CEF3 !important;
+}
+.card{
+    background-color: #34CEF3 !important;
+}
