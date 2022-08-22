@@ -2,13 +2,24 @@ import React,{ useEffect,useState,useRef  } from 'react'
 import {gsap} from 'gsap'
 import Banner from './home_modules/Banner';
 import WantCurrency from './home_modules/WantCurrency';
+import axios from 'axios';
+
 
 const Landing=()=> {
 const boxRef=useRef();
 const h1Ref=useRef();
+
+const http=axios.create({
+  baseURL:'localhost:8000',
+  headers:{
+    'X-Requested-with': 'XMLHttpRequest',
+  },
+  withCredentials:true,
+})
+
 useEffect(()=>{
- 
-});
+ getUser();
+},[]);
 
 const actionMind=()=>{
   gsap.to(boxRef.current, 2,{ rotation: "+=360", repeat:-1});
@@ -18,6 +29,13 @@ const callH1=()=>{
 gsap.to(h1Ref.current,3.5,{x:360,duration:2,stagger:1,repeat:-1});
 
 }
+
+const  getUser= async ()=>{
+const csrf = await http.get('/sanctum/csrf-cookie');
+console.log('csrf=',csrf);
+}
+
+
 
   return (
     <div>

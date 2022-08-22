@@ -8,7 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+
+use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
+ 
+/* class PersonalAccessToken extends SanctumPersonalAccessToken
+{
+    // ...
+} */
+class User extends SanctumPersonalAccessToken
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -41,4 +48,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }
