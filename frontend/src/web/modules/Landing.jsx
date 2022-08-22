@@ -10,7 +10,7 @@ const boxRef=useRef();
 const h1Ref=useRef();
 
 const http=axios.create({
-  baseURL:'localhost:8000',
+  baseURL:'http://127.0.0.1:8000',
   headers:{
     'X-Requested-with': 'XMLHttpRequest',
   },

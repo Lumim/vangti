@@ -11,7 +11,7 @@ import Insurance from './web/modules/Insurance';
 import Currency from './web/modules/Currency';
 import Login from './Login/Login';
 import Registration from './Login/Registration';
-
+import ProtectedLayout from './layout/ProtectedLayout'
 
 function App() {
   return (
@@ -19,12 +19,15 @@ function App() {
       <Routes>
         <Route path="/" element={<WebLayout />}>
           <Route  index element={<WebIndex />}/>
-          <Route path="loan" element={<Loan/>}/>
-          <Route  path="currency" element={<Currency/>}/>
-          <Route path="insurance" element={<Insurance/>}/>
           <Route path="login" element={<Login/>}/>
           <Route path="register" element={<Registration/>} />
         </Route>
+        <Route path="/dashboard" element={<ProtectedLayout />}>
+          <Route  index  element={<Loan/>}/>
+          <Route  path="/dashboard/currency" element={<Currency/>}/>
+          <Route path="insurance" element={<Insurance/>}/>
+        </Route>
+
 
         <Route path="*" element={<NotFound/>}/>
          

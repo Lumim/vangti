@@ -15,13 +15,13 @@ function ProtectedLayout
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                  
                 <li className="nav-item">
-                    <Link className="nav-link" to="/loan">Apply Loan</Link>
+                    <Link className="nav-link" to="/dashboard">Apply Loan</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/currency">Currency Converter</Link>
+                    <Link className="nav-link" to="/dashboard/currency">Currency Converter</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/insurance">Get Insurance</Link>
+                    <Link className="nav-link" to="/dashboard/insurance">Get Insurance</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">Login</Link>
