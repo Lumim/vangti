@@ -32,7 +32,13 @@ gsap.to(h1Ref.current,3.5,{x:360,duration:2,stagger:1,repeat:-1});
 
 const  getUser= async ()=>{
 const csrf = await http.get('/sanctum/csrf-cookie');
-console.log('csrf=',csrf);
+const login = await http.post('/api/login',{
+  email:'hello@gmail.com',
+  password:'secret',
+});
+console.log('login=',login);
+const user = await http.get('/api/user');
+console.log('users',user);
 }
 
 

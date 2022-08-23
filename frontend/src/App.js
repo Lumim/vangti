@@ -9,8 +9,8 @@ import AdminLayout from './layout/AdminLayout';
 import Users from './admin/modules/Users';
 import Insurance from './web/modules/Insurance';
 import Currency from './web/modules/Currency';
-import Login from './Login/Login';
-import Registration from './Login/Registration';
+import Login from './logreg/Login';
+import Registration from './logreg/Registration';
 import ProtectedLayout from './layout/ProtectedLayout'
 
 function App() {
