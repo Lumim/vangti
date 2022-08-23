@@ -73,7 +73,7 @@ const validate=(pass,cpass)=>{
                 <label className='form-label '>
                         User Full Name:
                 </label>
-                <input className='form-control ml-2' type="text" placeholder='Enter Full Name' {...register("fullname", {required: true, maxLength: 80})}/>
+                <input className='form-control ml-2' type="text" placeholder='Enter Full Name' pattern=" (?=.*[a-z]).{8,}" {...register("fullname", {required: true, maxLength: 80})}/>
                 <br /> 
                 <label className='form-label '>
                         Contact Mobile:
@@ -88,7 +88,7 @@ const validate=(pass,cpass)=>{
                 <label className='form-label '>
                         Password:
                 </label>
-                <input className='form-control ml-2' type="password" placeholder='Enter Password'  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" {...register("password", {required: true, minLength: 6, maxLength: 12})}/>
+                <input className='form-control ml-2' type="password" placeholder='Enter Password'  pattern=" (?=.*[a-z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" {...register("password", {required: true, minLength: 6, maxLength: 12})}/>
                 <br />
                 <label className='form-label '>
                         Confirm password:
