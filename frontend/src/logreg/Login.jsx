@@ -9,15 +9,15 @@ const url=Data.url;
 const [user_email,setEmail]=useState('')
 const [user_password,setPassword]=useState('')
 const headers = {
-        'Authorization': 'Bearer my-token',
-        'token': '6|8KUjAlglu8AdtnNjIBl3vt9a2tiNy6Sjtgfe28kv'
+        'Authorization': 'Bearer Token',
+        'Token': '6|8KUjAlglu8AdtnNjIBl3vt9a2tiNy6Sjtgfe28kv'
     };
 useEffect(()=>{
        getData();
 },[])
 
 const getData=async()=>{
-        axios.get(url+'user',{
+       await axios.get(url+'user',{
         headers
         }).then(response=>console.log(response).catch(error=>{console.log('there is an error',error)}))
 }
