@@ -43,8 +43,9 @@ class AuthController extends Controller
             $user = Auth::user();
             $success['token']= $user->createToken('vangti')->plainTextToken;
             $success['name']= $user->name;
+
             
-            return response()->json($response,200);
+            return response()->json($success,200);
         
         
         
@@ -53,7 +54,7 @@ class AuthController extends Controller
                 'success'=>500,
                 'message'=> 'unauthorised'
             ];
-            return response()->json($response,200);
+            return response()->json($response,300);
         }
 
     }
