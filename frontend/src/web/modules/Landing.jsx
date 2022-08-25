@@ -9,16 +9,10 @@ const Landing=()=> {
 const boxRef=useRef();
 const h1Ref=useRef();
 
-const http=axios.create({
-  baseURL:'http://127.0.0.1:8000',
-  headers:{
-    'X-Requested-with': 'XMLHttpRequest',
-  },
-  withCredentials:true,
-})
+ 
 
 useEffect(()=>{
- getUser();
+ 
 },[]);
 
 const actionMind=()=>{
@@ -30,16 +24,7 @@ gsap.to(h1Ref.current,3.5,{x:360,duration:2,stagger:1,repeat:-1});
 
 }
 
-const  getUser= async ()=>{
-const csrf = await http.get('/sanctum/csrf-cookie');
-const login = await http.post('/api/login',{
-  email:'hello@gmail.com',
-  password:'secret',
-});
-console.log('login=',login);
-const user = await http.get('/api/user');
-console.log('users',user);
-}
+ 
 
 
 
