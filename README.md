@@ -39,7 +39,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="https://i.ibb.co/mtcXmw6/vanner.png"  />
+  <img height="400" src="https://i.ibb.co/mtcXmw6/vanner.png"  />
 </div>
 
 ###
