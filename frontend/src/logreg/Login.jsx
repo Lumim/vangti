@@ -5,7 +5,7 @@ import Data from '../extra/Types'
 import axios from 'axios'
 const Login=()=> {
 
-const url=Data.url;
+const xurl=Data.url;
 const [user_email,setEmail]=useState('')
 const [user_password,setPassword]=useState('')
 const headers = {
@@ -14,11 +14,12 @@ const headers = {
          
     };
 useEffect(()=>{
-       getData();
+      // getData();
+     
 },[])
 
 const getData=async()=>{
-       await axios.get(url+'api/user',{
+       await axios.get(xurl+'api/user',{
         headers}
         ).catch(function (error) {
                 console.log(error.toJSON())}).then(response=>console.log(response))
@@ -26,26 +27,29 @@ const getData=async()=>{
 
 
 
-const submitLogin=()=>{
+const submitLogin=async()=>{
         let x = validateEmail(user_email);
         if(x){
-                console.log(user_email,user_password,url);        
-                console.log(validateEmail(user_email));
+                await   axios({
+                        method: "post",
+                        url: xurl+'api/login',
+                        data: {"email":user_email,"password":user_password},
+                        headers: { "Content-Type": "Application/json" },
+                        })
+                        .then(function (response) {
+                        //handle success
+                        console.log(response);
+                        })
+                        .catch(function (response) {
+                        //handle error
+                        console.log(response);
+                        });
         }
         else{
                 Swal.fire('error in email','Entered email address is wrong','error')
         }
 
-}
-const validate =(u,p)=>{
-        let y = u.trim();
-        if(y==""){
-                return  false
-        }
-        else{
-                return true
-        }
-}
+} 
 function validateEmail(email) 
     {
         var re = /\S+@\S+\.\S+/;
