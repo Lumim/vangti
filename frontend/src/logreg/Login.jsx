@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Data from '../extra/Types'
 import axios from 'axios'
@@ -8,6 +8,7 @@ const Login=()=> {
 const xurl=Data.url;
 const [user_email,setEmail]=useState('')
 const [user_password,setPassword]=useState('')
+const Navigate =useNavigate(); 
 const headers = {
         'Accept':'Application/json',
         'Authorization': 'Bearer 8|QU7nj0hHRD4sc0Tc9lndHeynHaRc4sTztkbNQTNC',
@@ -15,6 +16,8 @@ const headers = {
     };
 useEffect(()=>{
       // getData();
+      //console.log(localStorage.getItem('token'))
+
      
 },[])
 
@@ -27,23 +30,26 @@ const getData=async()=>{
 
 
 
-const submitLogin=async()=>{
+const submitLogin=()=>{
         let x = validateEmail(user_email);
         if(x){
-                await   axios({
-                        method: "post",
-                        url: xurl+'api/login',
-                        data: {"email":user_email,"password":user_password},
-                        headers: { "Content-Type": "Application/json" },
+                axios.get(xurl + 'sanctum/csrf-cookie')
+                .then((response) => {
+                        //console.log(response);
+                        axios.post(xurl+'api/login', {
+                                email: user_email,
+                                password: user_password
                         })
                         .then(function (response) {
-                        //handle success
-                        console.log(response);
+                                //console.log(response.data)
+                                localStorage.setItem('token',response.data.token)
+                                localStorage.setItem('user',response.data.name)
+                                Navigate('/dashboard')
                         })
-                        .catch(function (response) {
-                        //handle error
-                        console.log(response);
+                        .catch(function (error) {
+                               Swal.fire('Error in Login','Entered email and password is wrong','error')
                         });
+                });
         }
         else{
                 Swal.fire('error in email','Entered email address is wrong','error')

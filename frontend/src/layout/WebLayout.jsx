@@ -2,7 +2,10 @@ import React from 'react'
 import {Link,Outlet} from 'react-router-dom'
 
 const WebLayout=()=> {
-    const logo = require('../assets/logo.png')
+
+ 
+
+  const logo = require('../assets/logo.png')
   return (
 <div>
       
@@ -16,6 +19,7 @@ const WebLayout=()=> {
             <li  className="nav-item">
                 <Link  id="nav_item" className="nav-link" to="/register">Register</Link>
             </li>
+            
           
         </ul>
          

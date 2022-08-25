@@ -1,8 +1,25 @@
-import React from 'react'
-import {Link,Outlet} from 'react-router-dom'
+import React,{useEffect,useState} from 'react'
+import {Link,Outlet,useNavigate} from 'react-router-dom'
 function ProtectedLayout
 () {
  const logo = require('../assets/logo.png')
+
+ const [name,setName]=useState('');
+ const navigate = useNavigate();
+ useEffect(()=>{
+   checkUser();
+ },[localStorage])
+ const checkUser=()=>{
+    setName(localStorage.getItem('name'));
+    console.log(name)
+    if(name==null || name==""){
+        navigate('/login')
+    }
+  }
+  const Logout = ()=>{
+    localStorage.clear();
+
+  }
   return (
     <>
        <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,6 +43,9 @@ function ProtectedLayout
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">Login</Link>
                 </li>
+                <li className='nav-item'>
+                <button className='btn btn-primary' onClick={Logout} >Log out</button>
+            </li>
                 </ul>
                 {/* <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
