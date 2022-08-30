@@ -1,25 +1,39 @@
+import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import {Link,Outlet,useNavigate} from 'react-router-dom'
+import Data from '../extra/Types';
 function ProtectedLayout
 () {
  const logo = require('../assets/logo.png')
+ const header = Data.SancHeaders;
 
  var name;
  
  const navigate = useNavigate();
  
  useEffect(()=>{
-    
+   checkServer();
    checkUser();
  },[localStorage])
  const checkUser=()=>{
     name=localStorage.getItem('user');
-    console.log(name+"SDASD")
+    //console.log(name+"SDASD")
     
      if(name == null || name== ""){
         navigate('/login')
         } 
   }
+
+  const checkServer =async()=>{
+    console.log(header)
+    await axios.get(Data.url+'api/check',header
+      ).catch(function (error) {
+              console.log(error.toJSON())
+            }).then(response=>console.log(response))
+  }
+
+
+
   const Logout = ()=>{
    
     localStorage.clear();

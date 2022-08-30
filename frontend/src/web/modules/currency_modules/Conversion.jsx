@@ -18,6 +18,7 @@ const Conversion=()=> {
         });
     }
 
+    
   return (<>
             <div className='row col-md-12'>
             {/* <a href='http://www.indexmundi.com/xrates/graph.aspx?c1=USD&c2=EUR&days=30&lastday=20080220'><img alt='US Dollar to Euro Exchange Rate Graph - Jul 29, 2022 to Aug 26, 2022' src='http://www.indexmundi.com/xrates/image.aspx?c1=USD&c2=EUR&days=30&lastday=20080220' className='embeded' title='Click to play with this data at IndexMundi' /></a>

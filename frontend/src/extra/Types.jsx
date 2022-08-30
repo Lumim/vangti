@@ -13,4 +13,12 @@ Data.api_url1='https://currency-exchange.p.rapidapi.com/listquotes';
       'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
     }
   };
+
+ 
+
+ Data.SancHeaders = {
+  'Accept':'Application/json',
+  'Authorization': localStorage.getItem('token'),
+   
+};
 export default Data;
