@@ -41,7 +41,7 @@ const submitLogin=()=>{
                                 password: user_password
                         })
                         .then(function (response) {
-                                //console.log(response.data)
+                                console.log(response.data)
                                 localStorage.setItem('token',response.data.token)
                                 localStorage.setItem('user',response.data.name)
                                 Navigate('/dashboard')

@@ -10,5 +10,21 @@ body{
     background-color: #34CEF3 !important;
 }
 .card{
-    background-color: #34CEF3 !important;
+    /* //background-color: #34CEF3 !important; */
+}
+
+.fade-up{
+    -webkit-transform: translate3d(0,100px,0);
+    transform: translate3d(0px,0px,0);
+}
+
+/* html:not(.no-js) [data-aos=fade-up] {
+    -webkit-transform: translate3d(0,100px,0);
+    transform: translate3d(0,100px,0);
+} */
+.embeded{
+    border: solid 1px #rgb(0.6,0.6,0.6);
+}
+.conversion{
+    background-color:whitesmoke;
 }

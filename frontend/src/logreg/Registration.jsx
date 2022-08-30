@@ -1,15 +1,18 @@
 import React,{useState,useEffect} from 'react'
-import {Link} from 'react-router-dom'  
+import {Link,useNavigate} from 'react-router-dom'  
 import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import Data from '../extra/Types'
 
 const Registration=()=> {
+        const xurl=Data.url;
 const [alert, setAlert] = React.useState({
         type: 'error',
         text: 'This is a alert message',
         show: false
         })       
- 
+const Navigate = useNavigate();
 const { register, handleSubmit, formState: { errors } } = useForm();
 const onSubmit = (data) => {
         
@@ -25,8 +28,27 @@ const onSubmit = (data) => {
                         rgba(12,0,123,0.4)`
                       })    
         }
-        console.log(errors)
+        console.log(data)
         validate(data.password,data.confirm_password);
+        axios.get(xurl + 'sanctum/csrf-cookie')
+                .then((response) => {
+                        //console.log(response);
+                        axios.post(xurl+'api/register', {
+                                name:data.fullname,
+                                email:data.email,
+                                phone:data.mobile,
+                                password:data.password,
+                                c_password:data.confirm_password
+
+                        })
+                        .then(function (response) {
+                                console.log(response.data)
+                                Navigate('/login')
+                        })
+                        .catch(function (error) {
+                               Swal.fire('Error in Login','Entered email and password is wrong','error')
+                        });
+                });
 
 }
 
@@ -73,7 +95,7 @@ const validate=(pass,cpass)=>{
                 <label className='form-label '>
                         User Full Name:
                 </label>
-                <input className='form-control ml-2' type="text" placeholder='Enter Full Name' pattern=" (?=.*[a-z]).{8,}" {...register("fullname", {required: true, maxLength: 80})}/>
+                <input className='form-control ml-2' type="text" placeholder='Enter Full Name'   {...register("fullname", {required: true, maxLength: 80})}/>
                 <br /> 
                 <label className='form-label '>
                         Contact Mobile:
@@ -88,7 +110,7 @@ const validate=(pass,cpass)=>{
                 <label className='form-label '>
                         Password:
                 </label>
-                <input className='form-control ml-2' type="password" placeholder='Enter Password'  pattern=" (?=.*[a-z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" {...register("password", {required: true, minLength: 6, maxLength: 12})}/>
+                <input className='form-control ml-2' type="password" placeholder='Enter Password'  pattern=" (?=.{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" {...register("password", {required: true, minLength: 6, maxLength: 12})}/>
                 <br />
                 <label className='form-label '>
                         Confirm password:
