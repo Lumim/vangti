@@ -22,9 +22,18 @@ body{
     -webkit-transform: translate3d(0,100px,0);
     transform: translate3d(0,100px,0);
 } */
-.embeded{
-    border: solid 1px #rgb(0.6,0.6,0.6);
-}
+
 .conversion{
     background-color:whitesmoke;
+    width: 200%;
+}
+.cbody{
+    background-blend-mode: soft-light;
+    border-radius: 25px;
+}
+.container{
+    width: max-content;
+}
+.embeded{
+    border: solid 1px #rgb(0.6,0.6,0.6);
 }

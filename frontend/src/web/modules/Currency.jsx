@@ -15,12 +15,12 @@ const Curr = useRef();
           <Conversion/>
           </div>
       </div>
-      <div className='card'>
+      <div className='card cbody'>
         <div className='card-title fade-up d-flex justify-content-center'>
           <h3>Request for a currency conversion dealer</h3>
           
         </div>
-        <div className='card-body'>
+        <div className='card-body '>
           <Dealer/>
           </div>
       </div>  
