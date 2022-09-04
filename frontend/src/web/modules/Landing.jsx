@@ -3,6 +3,7 @@ import {gsap} from 'gsap'
 import Banner from './home_modules/Banner';
 import WantCurrency from './home_modules/WantCurrency';
 import axios from 'axios';
+import LoanCurrency from './home_modules/LoanCurrency';
 
 
 const Landing=()=> {
@@ -32,6 +33,7 @@ gsap.to(h1Ref.current,3.5,{x:360,duration:2,stagger:1,repeat:-1});
     <div>
       <div id="hcard" className='card'> <Banner/> <button className=' buttonHome'> click for details</button></div>
        <WantCurrency/>
+       <LoanCurrency/>
       <h1>Want to apply for a currency conversion?</h1>
       <h1 > Request for a vangti dealer at you home?</h1>
       <h2 > Request for a loan agent at you doorstep?</h2>

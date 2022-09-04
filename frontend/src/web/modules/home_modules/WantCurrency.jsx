@@ -3,7 +3,7 @@ import React from 'react'
 const WantCurrency=()=> {
   const loan = require('../../../assets/loan.png');
     return (
-    <div className='card'>
+    <div className='hcard'>
         
             <img src={loan}/>
        

@@ -7,7 +7,8 @@ const WebLayout=()=> {
 
   const logo = require('../assets/logo.png')
   return (
-<div>
+    <>
+<nav>
       
         <ul className="nav justify-content-center bg-dark">
             <Link class="navbar-brand" to="/">
@@ -23,9 +24,19 @@ const WebLayout=()=> {
           
         </ul>
          
-      
         <Outlet/>
-    </div>
+ </nav>
+ <footer className="bg-light text-center text-lg-start relative-bottom">
+         
+         <div className="text-center p-3">
+           © 2022 Copyright:
+           <a className="text-dark" href="/">vangti.com</a>
+         </div>
+       
+       </footer>   
+ </>
+ 
+   
   )
 }
 
