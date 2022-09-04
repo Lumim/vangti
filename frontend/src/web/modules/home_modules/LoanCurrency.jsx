@@ -10,7 +10,7 @@ function LoanCurrency() {
 
   return (
     <div className='hcard'>
-    <img onClick={clickHandle}src={loan_currency} ></img>
+    <img id='Vbanner' onClick={clickHandle}src={loan_currency} ></img>
     </div>
   )
 }

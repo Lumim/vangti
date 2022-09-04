@@ -11,6 +11,9 @@ use Auth;
 class CheckController extends Controller
 {
     public function check(Request $request){
-        return response()->json('success');
+        $message=array(
+            'success'=>true
+        );
+        return response()->json($message);
     }
 }

@@ -5,7 +5,7 @@ const WantCurrency=()=> {
     return (
     <div className='hcard'>
         
-            <img src={loan}/>
+            <img id='Vbanner' src={loan}/>
        
     </div>
   )

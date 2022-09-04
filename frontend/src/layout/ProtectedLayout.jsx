@@ -5,7 +5,7 @@ import Data from '../extra/Types';
 function ProtectedLayout
 () {
  const logo = require('../assets/logo.png')
- const header = Data.SancHeaders;
+ const headers = Data.SancHeaders;
 
  var name;
  
@@ -24,12 +24,22 @@ function ProtectedLayout
         } 
   }
 
-  const checkServer =async()=>{
-    console.log(header)
-    await axios.get(Data.url+'api/check',header
+  const checkServer =async()=>{ 
+    await axios.get(Data.url+'api/check',{
+      headers}
       ).catch(function (error) {
-              console.log(error.toJSON())
-            }).then(response=>console.log(response))
+      console.log(error.toJSON())})
+      .then(response=>{
+        if(response.data.success){
+          return "ok"
+          console.log(response.data.success)
+        }
+        else{
+          navigate('/login')
+        }
+      }
+        
+        )
   }
 
 

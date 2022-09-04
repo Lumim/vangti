@@ -18,7 +18,7 @@ Data.api_url1='https://currency-exchange.p.rapidapi.com/listquotes';
 
  Data.SancHeaders = {
   'Accept':'Application/json',
-  'Authorization': localStorage.getItem('token'),
+  'Authorization': 'Bearer 72|JO2FnREPn3330wjWkEHqSHe2JZ8vzeBhMPQQkgSh',
    
 };
 export default Data;
