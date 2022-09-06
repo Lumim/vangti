@@ -12,9 +12,10 @@ function ProtectedLayout
  const navigate = useNavigate();
  
  useEffect(()=>{
-   checkServer();
-   checkUser();
- },[localStorage])
+  checkUser();
+  checkServer();
+  
+ },[])
  const checkUser=()=>{
     name=localStorage.getItem('user');
     //console.log(name+"SDASD")
@@ -28,15 +29,17 @@ function ProtectedLayout
     await axios.get(Data.url+'api/check',{
       headers}
       ).catch(function (error) {
-      console.log(error.toJSON())})
+     // navigate('/login')
+      })
       .then(response=>{
+        if(response){
         if(response.data.success){
-          return "ok"
-          console.log(response.data.success)
+          console.log('ok')
+          return  true
         }
         else{
           navigate('/login')
-        }
+        }}
       }
         
         )
