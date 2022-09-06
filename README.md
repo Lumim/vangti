@@ -34,7 +34,7 @@
 
 ###
 
-<p align="left">run in the cmd to the directory-<br>cd backend<br>composer install<br>PHP artisan migrate<br>PHP artisan serve<br><br>edit the .env file<br>add your MySQL server<br><br>cd ../frontend<br>npm install<br>npm start</p>
+<p align="left">run in the cmd to the directory-<br>cd backend<br>composer install<br>PHP artisan migrate<br>PHP artisan serve<br><br>edit the .env file<br>add your MySQL server<br><br>cd ../frontend<br>npm install<br>npm start</p> <br> <br> <h3>To run the Mobile app </h3> <p align="left"> cd mobile_app/vangti <br> expo start</p>
 
 ###
 
