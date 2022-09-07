@@ -1,8 +1,16 @@
 import React from 'react'
-
-function Splash() {
+import { Button } from 'react-native'
+const Splash=({navigation})=> {
   return (
-    <div>Splash</div>
+    <>
+    <div>Splash+ {name}</div>
+    <Button
+      title="Go to Jane's profile"
+      onPress={() =>
+        navigation.navigate('login', { name: 'Login' })
+      }
+    />
+    </>
   )
 }
 
